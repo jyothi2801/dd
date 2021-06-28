@@ -1,0 +1,46 @@
+Groovy plugin for Jenkins
+Configuration
+To configure available Groovy installation on your system,
+ go to Jenkins configuration page, 
+find section 'Groovy' and fill the form as shown bellow.
+
+
+
+
+two types of scripting :
+
+1. (declarative pipeline)
+
+// Jenkinsfile (Declarative Pipeline)
+pipeline {
+  agent any
+stages {
+  stage('Build') {
+    steps {
+      sh 'echo "This is my first step"'
+    }
+  }
+  stage('Test') {
+    steps
+      sh 'echo "This is my Test step"'
+    }
+  }
+  stage('Deploy') {
+    steps {
+      sh 'echo "This is my Deploy step"'
+    }
+  }
+}
+
+2.scripted pipeline
+
+// Jenkinsfile (Scripted Pipeline)
+node { // node/agent
+  stage('Stage 1') {
+    echo 'Hello World' // echo Hello World
+  }
+}
+
+
+
+
